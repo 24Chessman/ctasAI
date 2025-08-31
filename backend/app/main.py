@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 import threading
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.endpoints import predict, data, alerts, evacuation, auth, sms
+from app.api.endpoints import predict, data, alerts, evacuation, auth
 from app.automation.scheduler import start_scheduler
 
 # Load environment variables from the backend/.env file
@@ -18,7 +18,6 @@ print("SUPABASE_URL:", "SET" if os.getenv("SUPABASE_URL") else "MISSING")
 print("SUPABASE_KEY:", "SET" if os.getenv("SUPABASE_KEY") else "MISSING")
 print("SMTP_USERNAME:", "SET" if os.getenv("SMTP_USERNAME") else "MISSING")
 print("SMTP_PASSWORD:", "SET" if os.getenv("SMTP_PASSWORD") else "MISSING")
-print("SMS_API_KEY:", "SET" if os.getenv("SMS_API_KEY") else "MISSING")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -42,7 +41,7 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Add your frontend origins
+    allow_origins=["http://localhost:5174", "http://localhost:3000"],  # Add your frontend origins
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
@@ -54,7 +53,6 @@ app.include_router(data.router, prefix="/api/v1", tags=["data"])
 app.include_router(alerts.router, prefix="/api/v1", tags=["alerts"])
 app.include_router(evacuation.router, prefix="/api/v1/evacuation", tags=["evacuation"])
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["authentication"])
-app.include_router(sms.router, prefix="/api/v1/sms", tags=["sms"])
 
 @app.get("/")
 async def root():
