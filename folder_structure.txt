@@ -1,0 +1,87 @@
+Folder PATH listing for volume New Volume
+Volume serial number is DC23-6E02
+D:.
+|   buoy.csv
+|   buoy_labeled.csv
+|   cyclones.csv
+|   folder_structure.txt
+|   historical_data_labeled.csv
+|   historical_real_data.csv
+|   LICENSE
+|   README.md
+|   
+\---backend
+    |   .env.txt
+    |   requirements.txt
+    |   __init__.py
+    |   
+    \---app
+        |   main.py
+        |   __init__.py
+        |   
+        +---api
+        |   |   __init__.py
+        |   |   
+        |   +---endpoints
+        |   |   |   alerts.py
+        |   |   |   data.py
+        |   |   |   predict.py
+        |   |   |   __init__.py
+        |   |   |   
+        |   |   \---__pycache__
+        |   |           alerts.cpython-312.pyc
+        |   |           data.cpython-312.pyc
+        |   |           predict.cpython-312.pyc
+        |   |           __init__.cpython-312.pyc
+        |   |           
+        |   \---__pycache__
+        |           __init__.cpython-312.pyc
+        |           
+        +---automation
+        |   |   scheduler.py
+        |   |   
+        |   \---__pycache__
+        |           scheduler.cpython-312.pyc
+        |           
+        +---core
+        |   |   config.py
+        |   |   __init__.py
+        |   |   
+        |   \---__pycache__
+        |           config.cpython-312.pyc
+        |           __init__.cpython-312.pyc
+        |           
+        +---ml_models
+        |   |   buoy_labled.py
+        |   |   create_dataset.py
+        |   |   cyclonea.py
+        |   |   cyclone_predictor.py
+        |   |   model.pkl
+        |   |   noaa_buoy.py
+        |   |   prepare_real_data.py
+        |   |   rule_engine.py
+        |   |   trainedModel_realData.py
+        |   |   train_model.py
+        |   |   __init__.py
+        |   |   
+        |   \---__pycache__
+        |           cyclone_predictor.cpython-312.pyc
+        |           rule_engine.cpython-312.pyc
+        |           __init__.cpython-312.pyc
+        |           
+        +---services
+        |   |   alert_system.py
+        |   |   data_fetcher.py
+        |   |   prediction_service.py
+        |   |   __init__.py
+        |   |   
+        |   \---__pycache__
+        |           alert_system.cpython-312.pyc
+        |           data_fetcher.cpython-312.pyc
+        |           prediction_service.cpython-312.pyc
+        |           __init__.cpython-312.pyc
+        |           
+        \---__pycache__
+                main.cpython-312.pyc
+                __init__.cpython-312.pyc
+                

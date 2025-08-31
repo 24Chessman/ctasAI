@@ -1,0 +1,37 @@
+# SSL Configuration Example for CTAS AI Backend
+# Copy these settings to your .env file to resolve SSL certificate issues
+
+# Supabase Configuration
+SUPABASE_URL=https://bdxchhewjbfzydeyjces.supabase.co
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkeGNoaGV3amJmenlkZXlqY2VzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY1MDA1NTUsImV4cCI6MjA3MjA3NjU1NX0.t58O9RpsmRPv7_5jJFSxJkzHX2hIt0jsgrFXUHGOSb0
+
+# SSL Configuration (for certificate issues)
+# Set to false if you're getting SSL certificate errors
+SSL_VERIFY=false
+# Path to custom SSL certificate file (optional)
+# SSL_CERT_PATH=/path/to/custom/cert.pem
+# Suppress SSL warnings (optional)
+SSL_DISABLE_WARNING=true
+
+# Email Configuration (Optional - for sending notifications)
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+
+# SMS Configuration (Optional)
+SMS_API_KEY=your-sms-api-key
+SMS_API_URL=your-sms-api-url
+
+# Push Notification Configuration (Optional)
+PUSH_API_KEY=your-push-api-key
+PUSH_API_URL=your-push-api-url
+
+# How to use:
+# 1. Copy these settings to your backend/.env file
+# 2. Set SSL_VERIFY=false to disable SSL certificate verification
+# 3. Restart your backend server
+# 4. The SSL utilities will automatically handle certificate issues
+
+# WARNING: Disabling SSL verification is not recommended for production use
+# Only use this for development or when you're sure about the security implications
